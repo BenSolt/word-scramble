@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App2 from './App2';
+
+import AppWordScramble from './AppWordScramble';
+// import AppSlideLetter from './AppSlideLetter';
+import AppSlideColor from './AppSlideColor';
+// import WordGame from './WordGame';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App2 />
+   
+    {/* <WordGame/> */}
+    <AppWordScramble/>
+    <AppSlideColor/>
+    {/* <WordGameMove/> */}
+
   </React.StrictMode>,
   document.getElementById('root')
 );
