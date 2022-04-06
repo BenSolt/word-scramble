@@ -1,3 +1,7 @@
+h1 {
+    margin-bottom: 8px;
+}
+
 .App2 {
     font-family: sans-serif;
     text-align: center;
@@ -163,7 +167,10 @@
 }
 
 
-@media only screen and (max-width: 375px) {
+/*//////////////////// PHONE ////////////////////////////////////////*/
+/* ///////////////////////////////////////////////////////////////// */
+/* @media only screen and (max-width: 375px) { */
+@media only screen and (max-width: 425px) {
 
     .uiHolder {
         display: flex;
@@ -183,7 +190,7 @@
         background-Color: #c9c9c9;
         display: flex;
         flex-Flow: wrap;
-        margin: 3%;
+        margin: auto;
         justify-content: center;
         padding: 5px
     }
