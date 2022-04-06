@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import "./AppWordScramble.css";
+import "./AppWordScramble2.css";
 import "./AppModal.css";
 import wordsSolve from './components/WordsSolve';
 import WordModal from './WordModal';
@@ -11,31 +11,18 @@ let pickNumber = Math.floor(Math.random() * solveWordsArr.length);
 const wordPick = solveWordsArr[pickNumber]
 
 const arr = [
-    { id: 0, letter: '0', state: "tileStart" },
-    { id: 1, letter: wordPick[1], state: "tileStart" },
-    { id: 2, letter: wordPick[2], state: "tileStart" }, { id: 3, letter: wordPick[3], state: "tileStart" },
-    { id: 4, letter: wordPick[4], state: "tileStart" }, { id: 5, letter: wordPick[5], state: "tileStart" },
-    { id: 6, letter: randomLetrs(1), state: "tileStart" }, { id: 7, letter: randomLetrs(1), state: "tileStart" },
-    { id: 8, letter: randomLetrs(1), state: "tileStart" },
+    { id: 0, letter: '0', state: "tileStart2" },
+    { id: 1, letter: wordPick[1], state: "tileStart2" },
+    { id: 2, letter: wordPick[2], state: "tileStart2" }, { id: 3, letter: wordPick[3], state: "tileStart2" },
+    { id: 4, letter: wordPick[4], state: "tileStart2" }, { id: 5, letter: wordPick[5], state: "tileStart2" },
+    { id: 6, letter: randomLetrs(1), state: "tileStart2" }, { id: 7, letter: randomLetrs(1), state: "tileStart2" },
+    { id: 8, letter: randomLetrs(1), state: "tileStart2" },
 
-    { id: 9, letter: randomLetrs(1), state: "tileStart" }, { id: 10, letter: randomLetrs(1), state: "tileStart" },
-    { id: 11, letter: randomLetrs(1), state: "tileStart" }, { id: 12, letter: randomLetrs(1), state: "tileStart" },
-    { id: 13, letter: randomLetrs(1), state: "tileStart" }, { id: 14, letter: randomLetrs(1), state: "tileStart" },
-    { id: 15, letter: randomLetrs(1), state: "tileStart" }, { id: 16, letter: randomLetrs(1), state: "tileStart" },
-    { id: 17, letter: randomLetrs(1), state: "tileStart" },
-
-    // BOARD SIZE 6 by 5
-    { id: 18, letter: randomLetrs(1), state: "tileStart" }, { id: 19, letter: randomLetrs(1), state: "tileStart" },
-    { id: 20, letter: randomLetrs(1), state: "tileStart" }, { id: 21, letter: randomLetrs(1), state: "tileStart" },
-    { id: 22, letter: randomLetrs(1), state: "tileStart" }, { id: 23, letter: randomLetrs(1), state: "tileStart" },
-    { id: 24, letter: randomLetrs(1), state: "tileStart" }, { id: 25, letter: randomLetrs(1), state: "tileStart" },
-    { id: 26, letter: randomLetrs(1), state: "tileStart" }, { id: 27, letter: randomLetrs(1), state: "tileStart" },
-    { id: 28, letter: randomLetrs(1), state: "tileStart" }, { id: 29, letter: randomLetrs(1), state: "tileStart" },
-
-    //{ id: 30, letter: randomLetrs(1), state: "tileStart" }, 
-    // { id: 31, letter: randomLetrs(1), state: "tileStart" }, { id: 32, letter: randomLetrs(1), state: "tileStart" }, 
-    // { id: 33, letter: randomLetrs(1), state: "tileStart" }, { id: 34, letter: randomLetrs(1), state: "tileStart" }, 
-    // { id: 35, letter: randomLetrs(1), state: "tileStart" },
+    { id: 9, letter: randomLetrs(1), state: "tileStart2" }, { id: 10, letter: randomLetrs(1), state: "tileStart2" },
+    { id: 11, letter: randomLetrs(1), state: "tileStart2" }, { id: 12, letter: randomLetrs(1), state: "tileStart2" },
+    { id: 13, letter: randomLetrs(1), state: "tileStart2" }, { id: 14, letter: randomLetrs(1), state: "tileStart2" },
+    { id: 15, letter: randomLetrs(1), state: "tileStart2" }, { id: 16, letter: randomLetrs(1), state: "tileStart2" },
+    { id: 17, letter: randomLetrs(1), state: "tileStart2" },
 ];
 
 const SIZE = 6;
@@ -168,7 +155,7 @@ function App() {
     return (
         <div className="App2">
 
-            <h1>WORD SCRAMBLE</h1>
+            <h1>SCRAMBLE 2</h1>
             {/* <h5>by Ben Solt</h5> */}
 
             {/* <WordScrambleScores /> */}
@@ -178,21 +165,21 @@ function App() {
             />
 
             <div>
-                <div className="board2">
+                <div className="board3">
                     {cards.map((num, i) => {
                         if (num.id === 0) {
-                            return <div className="tileBlank" key={num.id} />;
+                            return <div className="tileBlank2" key={num.id} />;
                         }
                         for (let i = 0; i < wordPick.length; i++) {
 
                             const solChar = wordPick[i];
 
                             if (cards[i].letter === solChar) {
-                                cards[i].state = 'tileGreen'
+                                cards[i].state = 'tileGreen2'
                             } else if (cards[i].id < 6) {
-                                cards[i].state = 'tileYellow'
+                                cards[i].state = 'tileYellow2'
                             } else {
-                                cards[i].state = 'tileStart'
+                                cards[i].state = 'tileStart2'
                             }
                         }
                         checkWin();

@@ -1,33 +1,7 @@
-h1 {
-    margin-bottom: 4px;
-}
 
-h5 {
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
-
-.App2 {
-    font-family: sans-serif;
-    text-align: center;
-}
-
-.Board {
-    width: 320px;
-    height: 310px;
-    background-Color: #c9c9c9;
-    display: flex;
-    flex-Flow: wrap;
-    margin: 4%;
-}
-
-/* 630 = 100px width */
- /* 515 = 100px height */
-.board2 {
-    /* width: 630px; */
-    width: 450px;
-    /* height: 315px; */
-    height: 370px;
+.board3 {
+    width: 640px;
+    height: 315px;
     background-Color: #c9c9c9;
     display: flex;
     flex-Flow: wrap;
@@ -47,11 +21,9 @@ h5 {
     margin-right: 12px;
 }
 
-.tileStart {
-    /* width: 100px;
-    height: 100px; */
-    width: 70px;
-    height: 70px;
+.tileStart2 {
+    width: 100px;
+    height: 100px;
     box-Sizing: border-box;
     background-Color: gray;
     border: 2px solid black;
@@ -60,11 +32,9 @@ h5 {
     /* cursor: pointer */
 }
 
-.tileGreen {
-    /* width: 100px;
-    height: 100px; */
-    width: 70px;
-    height: 70px;
+.tileGreen2 {
+    width: 100px;
+    height: 100px;
     box-Sizing: border-box;
     background-Color: green;
     border: 2px solid black;
@@ -72,11 +42,9 @@ h5 {
     margin: 2px;
 }
 
-.tileBlank {
-    /* width: 100px;
-    height: 100px; */
-    width: 70px;
-    height: 70px;
+.tileBlank2 {
+    width: 100px;
+    height: 100px;
     box-Sizing: border-box;
     background-Color: #c9c9c9;
     border: 2px solid black;
@@ -84,11 +52,9 @@ h5 {
     margin: 2px;
 }
 
-.tileYellow {
-    /* width: 100px;
-    height: 100px; */
-    width: 70px;
-    height: 70px;
+.tileYellow2 {
+    width: 100px;
+    height: 100px;
     box-Sizing: border-box;
     background-Color: yellow;
     border: 2px solid black;
@@ -110,7 +76,7 @@ h5 {
 }
 
 .tileBlankSmall {
-    width: 50px;
+    width: 45px;
     height: 45px;
     box-Sizing: border-box;
     background-Color: #c9c9c9;
@@ -194,10 +160,9 @@ h5 {
         margin-right: 0;
     }
 
-    .board2 {
+    .board3 {
         width: 300px;
-        /* height: 145px; */
-        height: 245px;
+        height: 145px;
         background-Color: #c9c9c9;
         display: flex;
         flex-Flow: wrap;
@@ -206,7 +171,7 @@ h5 {
         padding: 5px
     }
 
-    .tileStart {
+    .tileStart2 {
         width: 45px;
         height: 45px;
         box-Sizing: border-box;
@@ -216,7 +181,7 @@ h5 {
         margin: 2px;
     }
 
-    .tileGreen {
+    .tileGreen2 {
         width: 45px;
         height: 45px;
         box-Sizing: border-box;
@@ -226,7 +191,7 @@ h5 {
         margin: 2px;
     }
 
-    .tileBlank {
+    .tileBlank2 {
         width: 45px;
         height: 45px;
         box-Sizing: border-box;
@@ -236,7 +201,7 @@ h5 {
         margin: 2px;
     }
 
-    .tileYellow {
+    .tileYellow2 {
         width: 45px;
         height: 45px;
         box-Sizing: border-box;
