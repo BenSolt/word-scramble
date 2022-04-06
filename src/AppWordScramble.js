@@ -56,7 +56,7 @@ function shuffle(array) {
         array[j] = temp;
     }
 }
-//shuffle(arr);
+shuffle(arr);
 
 function getPos(index) {
     return {
@@ -167,6 +167,7 @@ function App() {
         <div className="App2">
 
             <h1>WORD SCRAMBLE</h1>
+            {/* <h5>by Ben Solt</h5> */}
 
             {/* <WordScrambleScores /> */}
 
