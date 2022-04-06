@@ -1,115 +1,263 @@
-.App {
+.App2 {
     font-family: sans-serif;
     text-align: center;
-    
-  }
-.board {
-    display: inline-block;
-    background-color: darkgray;
-    border-radius: 5px;
-    padding: 5px
-
-}
-.puzzle{
-  display: "flex";
 }
 
-.tile {
-    display: "flex";
-    justify-Content: "center";
-    /* align-items: "center"; */
-    width: 77px;
-    height: 77px;
-    margin: 2;
+.Board {
+    width: 320px;
+    height: 310px;
+    background-Color: #c9c9c9;
+    display: flex;
+    flex-Flow: wrap;
+    margin: 4%;
+}
+
+/* .centerBoard {
+    display: flex;
+    justify-content: center;
+    border: 2px solid red;
+} */
+
+.board2 {
+    width: 630px;
+    height: 315px;
+    background-Color: #c9c9c9;
+    display: flex;
+    flex-Flow: wrap;
+    margin: auto;
+    justify-content: center;
+    padding: 5px;
+}
+
+.uiHolder {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.buttonHolder {
+    margin-right: 12px;
+}
+
+.tileStart {
+    width: 100px;
+    height: 100px;
+    box-Sizing: border-box;
+    background-Color: gray;
     border: 2px solid black;
-    border-radius: 5px;
-    cursor: "pointer";
+    border-radius: 4px;
     margin: 2px;
-    user-select: "none"
+    /* cursor: pointer */
 }
 
-.tileText {
-  height: 77px;
-  height: 72px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-Size: 2rem;
-  font-Weight: bold
+.tileGreen {
+    width: 100px;
+    height: 100px;
+    box-Sizing: border-box;
+    background-Color: green;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: 2px;
 }
 
-/* //////// WITH LETTERS////////////////////////// */
-.Container {
-  display: flex;
-  border: 2px solid red;
+.tileBlank {
+    width: 100px;
+    height: 100px;
+    box-Sizing: border-box;
+    background-Color: #c9c9c9;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: 2px;
 }
 
-.tileTextBlank {
-  height: 77px;
-  height: 72px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-Size: 2rem;
-  font-Weight: bold;
-  border: 2px solid blue;
+.tileYellow {
+    width: 100px;
+    height: 100px;
+    box-Sizing: border-box;
+    background-Color: yellow;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: 2px;
+}
+
+.letter {
+    display: flex;
+    justify-content: center;
+}
+
+.boardGameRules {
+    width: 260px;
+    height: 50px;
+    background-Color: #c9c9c9;
+    display: flex;
+    margin: auto;
+}
+
+.tileBlankSmall {
+    width: 50px;
+    height: 45px;
+    box-Sizing: border-box;
+    background-Color: #c9c9c9;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.tileGreenSmall {
+    width: 45px;
+    height: 45px;
+    box-Sizing: border-box;
+    background-Color: green;
+    border: 2px solid black;
+    border-radius: 4px;
+    /* cursor: pointer */
+}
+
+/* //////////// BUTTON PLAY AGAIN /////////////////////////////////////////// */
+
+.buttonGameRules {
+    margin-top: 12px;
+    margin-right: 12px;
+    font-Size: 1.1rem;
+    color: white;
+    font-weight: bold;
+    width: 128px;
+    height: 64px;
+    border: 2px solid black;
+    background-color: rgb(97, 97, 97);
+    border-radius: 3px;
+}
+
+.buttonGameRules:hover {
+    border: 2px solid black;
+    background-color: rgb(0, 110, 255);
+}
+
+.buttonGameRules:active {
+    border: 2px solid black;
+    background-color: rgb(0, 60, 255);
 }
 
 
-/* ////////////////////////////////////////////////////////////////////////// */
-/* /////////////////////WORDLE SETUP///////////////////////////////////////// */
-
-
-.rowWrapper2 {
-  display: flex;
-  justify-content: center;
+.buttonPlay {
+    margin-top: 12px;
+    margin-left: 12px;
+    font-Size: 1.1rem;
+    color: white;
+    font-weight: bold;
+    width: 128px;
+    height: 64px;
+    border: 2px solid black;
+    background-color: rgb(97, 97, 97);
+    border-radius: 3px;
 }
 
-.letterposit2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 77px;
-  height: 77px;
-  font-Size: 2rem;
-  font-Weight: bold;
-  /* background-color: lightgray; */
-  /* border: 2px solid black; */
-}
-.wordStart2 {
-  color: var(--white);
-  background-color: gray;
-  width: 77px;
-  height: 77px;
-  border: 2px solid black;
-  margin: 2px;
+.buttonPlay:hover {
+    border: 2px solid black;
+    background-color: rgb(0, 110, 255);
 }
 
-.empty {
-  color: var(--white);
-  background-color: var(--gray);
-  width: 77px;
-  height: 77px;
-  border: 2px solid black;
-  margin: 2px;
+.buttonPlay:active {
+    border: 2px solid black;
+    background-color: rgb(0, 60, 255);
 }
 
-/* LETTER CORRECT POSITION */
-.correct {
-  color: var(--white);
-  background-color: green;
-  width: 77px;
-  height: 77px;
-  border: 2px solid black;
-  margin: 2px;
-}
 
-/* LETTER WRONG POSITION POSITION */
-.wrongposition {
-  color: var(--white);
-  background-color: var(--yellow);
-  width: 77px;
-  height: 77px;
-  border: 2px solid black;
-  margin: 2px;
+@media only screen and (max-width: 375px) {
+
+    .uiHolder {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .buttonHolder {
+        margin-right: 0;
+    }
+
+    .board2 {
+        width: 300px;
+        height: 145px;
+        /* height: 600px; */
+        background-Color: #c9c9c9;
+        display: flex;
+        flex-Flow: wrap;
+        margin: 3%;
+        justify-content: center;
+        padding: 5px
+    }
+
+    .tileStart {
+        width: 45px;
+        height: 45px;
+        box-Sizing: border-box;
+        background-Color: gray;
+        border: 2px solid black;
+        border-radius: 4px;
+        margin: 2px;
+    }
+
+    .tileGreen {
+        width: 45px;
+        height: 45px;
+        box-Sizing: border-box;
+        background-Color: green;
+        border: 2px solid black;
+        border-radius: 4px;
+        margin: 2px;
+    }
+
+    .tileBlank {
+        width: 45px;
+        height: 45px;
+        box-Sizing: border-box;
+        background-Color: #c9c9c9;
+        border: 2px solid black;
+        border-radius: 4px;
+        margin: 2px;
+    }
+
+    .tileYellow {
+        width: 45px;
+        height: 45px;
+        box-Sizing: border-box;
+        background-Color: yellow;
+        border: 2px solid black;
+        border-radius: 4px;
+        margin: 2px;
+    }
+
+    .letter {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* BUTTONS////////////////// */
+    .buttonGameRules {
+        margin-top: 12px;
+        margin-right: 12px;
+        font-Size: 1rem;
+        color: white;
+        font-weight: bold;
+        width: 110px;
+        height: 44px;
+        border: 2px solid black;
+        background-color: rgb(97, 97, 97);
+        border-radius: 3px;
+    }
+
+    .buttonPlay {
+        margin-top: 12px;
+        margin-left: 12px;
+        font-Size: 1rem;
+        color: white;
+        font-weight: bold;
+        width: 110px;
+        height: 44px;
+        border: 2px solid black;
+        background-color: rgb(97, 97, 97);
+        border-radius: 3px;
+    }
 }
