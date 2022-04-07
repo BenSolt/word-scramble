@@ -60,7 +60,7 @@ function shuffle(array) {
         array[j] = temp;
     }
 }
-// shuffle(arr);
+shuffle(arr);
 
 function getPos(index) {
     return {
