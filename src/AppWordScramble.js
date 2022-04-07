@@ -186,9 +186,6 @@ function App() {
             <div>
                 <div className="board2">
                     {cards.map((num, i) => {
-                        // GET RANGE OF arr (0 to 5) for currentWord
-                        //const currentWord = arr[0];
-                        //const solCountVal = solutionCountMap[currentWord[i].letter];
                         const solCountVal = solutionCountMap[cards[i].letter];
                         if (num.id === 0) {
                             return <div className="tileBlank" key={num.id} />;
@@ -205,7 +202,6 @@ function App() {
                             }
                             else if (solCountVal && solCountVal > 0) {
                                 cards[i].state = 'tileYellow'
-                                // solutionCountMap[currentWord[i].letter] = solutionCountMap[currentWord[i].letter] - 1;
                                 solutionCountMap[cards[i].letter] = solutionCountMap[cards[i].letter] - 1;
                             } else {
                                 cards[i].state = 'tileStart'
