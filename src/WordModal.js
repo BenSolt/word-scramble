@@ -102,7 +102,10 @@ export default function App(props) {
                     <button className="buttonGameRules" id="gameRules" onClick={gameRules}>Game Rules</button>
                     <button className="buttonPlay" onClick={() => { refreshPage() }}> Play Again </button>
                 </div>
+                <div>
                 <h1 id="timer">Timer: {props.timer}</h1>
+                <h1>Moves: {props.moves1}</h1>
+                </div>
             </div>
 
             {/* <div>
@@ -115,6 +118,7 @@ export default function App(props) {
                 <div className="modal-content">
                     <span onClick={gameScoresClose} className="close">&times;</span>
                     <h2>1. {convert(time)}</h2>
+                    <h1>Moves: {props.moves1}</h1>
 
                 </div>
             </div>
@@ -126,7 +130,7 @@ export default function App(props) {
                     <span onClick={spanClose} className="close">&times;</span>
                     <h2>Congratulations you won in</h2>
                     <h1 id="timer">Time: {props.timer}</h1>
-
+                    <h1>Moves: {props.moves1}</h1>
                 </div>
             </div>
 

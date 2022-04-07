@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import getLetterCountMap from "./utils/utils.js";
 import "./AppWordScramble.css";
 import "./AppModal.css";
 import wordsSolve from './components/WordsSolve';
 import WordModal from './WordModal';
+
 // import WordScrambleScores from './WordScrambleScores';
 
 const solveWordsArr = wordsSolve;
@@ -58,7 +60,7 @@ function shuffle(array) {
         array[j] = temp;
     }
 }
-shuffle(arr);
+// shuffle(arr);
 
 function getPos(index) {
     return {
@@ -84,15 +86,18 @@ function App() {
 
     const [blankIndex, setBlankIndex] = useState(arr[0].id);
     const [cards, setCards] = useState(arr);
+    const [moves, setMoves] = useState(0);
 
     function handleCardClick(targetIndex) {
         if (canSwap(targetIndex, blankIndex)) {
             startTimer();
+            setMoves(moves + 1)
             setCards((cards) => swap(cards, targetIndex, blankIndex));
             setBlankIndex(targetIndex);
         }
     };
 
+    const solutionCountMap = getLetterCountMap(wordPick);
     function checkWin() {
         let currentWordArr = []
         for (let i = 0; i < wordPick.length; i++) {
@@ -117,7 +122,7 @@ function App() {
         // If modalWin exists run code.
         if (modalWin !== null) {
             setTimeout(function () {
-               stopTimer();
+                stopTimer();
             }, 10)
             setTimeout(function () {
                 modalWin.style.display = "block";
@@ -175,11 +180,16 @@ function App() {
 
             <WordModal
                 timer={convert(time)}
+                moves1={moves}
             />
 
             <div>
                 <div className="board2">
                     {cards.map((num, i) => {
+                        // GET RANGE OF arr (0 to 5) for currentWord
+                        //const currentWord = arr[0];
+                        //const solCountVal = solutionCountMap[currentWord[i].letter];
+                        const solCountVal = solutionCountMap[cards[i].letter];
                         if (num.id === 0) {
                             return <div className="tileBlank" key={num.id} />;
                         }
@@ -188,9 +198,15 @@ function App() {
                             const solChar = wordPick[i];
 
                             if (cards[i].letter === solChar) {
+                                solutionCountMap[solChar] = solutionCountMap[solChar] - 1;
                                 cards[i].state = 'tileGreen'
                             } else if (cards[i].id < 6) {
                                 cards[i].state = 'tileYellow'
+                            }
+                            else if (solCountVal && solCountVal > 0) {
+                                cards[i].state = 'tileYellow'
+                                // solutionCountMap[currentWord[i].letter] = solutionCountMap[currentWord[i].letter] - 1;
+                                solutionCountMap[cards[i].letter] = solutionCountMap[cards[i].letter] - 1;
                             } else {
                                 cards[i].state = 'tileStart'
                             }

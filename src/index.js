@@ -8,7 +8,7 @@ import './index.css';
 // import AppPaul from './AppPaul';
 
 import AppWordScramble from './AppWordScramble';
-import AppWordScramble2 from './AppWordScramble2';
+// import AppWordScramble2 from './AppWordScramble2';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -18,7 +18,7 @@ ReactDOM.render(
     {/* <AppPaul/> */}
 
     <AppWordScramble/>
-    <AppWordScramble2/>
+    {/* <AppWordScramble2/> */}
 
   </React.StrictMode>,
   document.getElementById('root')

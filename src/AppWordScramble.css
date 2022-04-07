@@ -1,5 +1,6 @@
 h1 {
-    margin-bottom: 4px;
+    margin-top: 4px;
+    margin-bottom: 2px;
 }
 
 h5 {
@@ -21,12 +22,8 @@ h5 {
     margin: 4%;
 }
 
-/* 630 = 100px width */
- /* 515 = 100px height */
 .board2 {
-    /* width: 630px; */
     width: 450px;
-    /* height: 315px; */
     height: 370px;
     background-Color: #c9c9c9;
     display: flex;
@@ -48,8 +45,6 @@ h5 {
 }
 
 .tileStart {
-    /* width: 100px;
-    height: 100px; */
     width: 70px;
     height: 70px;
     box-Sizing: border-box;
@@ -61,8 +56,6 @@ h5 {
 }
 
 .tileGreen {
-    /* width: 100px;
-    height: 100px; */
     width: 70px;
     height: 70px;
     box-Sizing: border-box;
@@ -73,8 +66,6 @@ h5 {
 }
 
 .tileBlank {
-    /* width: 100px;
-    height: 100px; */
     width: 70px;
     height: 70px;
     box-Sizing: border-box;
@@ -85,8 +76,6 @@ h5 {
 }
 
 .tileYellow {
-    /* width: 100px;
-    height: 100px; */
     width: 70px;
     height: 70px;
     box-Sizing: border-box;
@@ -132,6 +121,7 @@ h5 {
 
 .buttonGameRules {
     margin-top: 12px;
+    /* margin-bottom: 4px; */
     margin-right: 12px;
     font-Size: 1.1rem;
     color: white;
@@ -156,6 +146,7 @@ h5 {
 
 .buttonPlay {
     margin-top: 12px;
+    /* margin-bottom: 4px; */
     margin-left: 12px;
     font-Size: 1.1rem;
     color: white;
@@ -255,6 +246,7 @@ h5 {
     /* BUTTONS////////////////// */
     .buttonGameRules {
         margin-top: 12px;
+        margin-bottom: 4px;
         margin-right: 12px;
         font-Size: 1rem;
         color: white;
@@ -268,6 +260,7 @@ h5 {
 
     .buttonPlay {
         margin-top: 12px;
+        margin-bottom: 4px;
         margin-left: 12px;
         font-Size: 1rem;
         color: white;
