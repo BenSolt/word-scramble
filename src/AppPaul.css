@@ -91,7 +91,7 @@
     margin: 2px;
   }
 
-  .tileStart {
+  .tileGray {
     color: var(--white);
     background-color: rgb(209, 209, 209);
     width: 80px;

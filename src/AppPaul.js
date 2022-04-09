@@ -72,7 +72,7 @@ function AppLetter() {
             //SOLVE WORD
             for (let i = 0; i < 1; i++) {
                 for (let j = 1; j < 6; j++) {
-                    solveWordArr[i].push({ letter: wordz[i + j], state: "tileStart" });
+                    solveWordArr[i].push({ letter: wordz[i + j], state: "tileGray" });
                 }
             }
 
@@ -82,9 +82,9 @@ function AppLetter() {
                     if (i === 0 && j === 0) {
                         newGrid2[i].push({ letter: 0, state: "zeroTile" });
                     } else if (i === 0) {
-                        newGrid2[i].push({ letter: wordz[i + j], state: "tileStart" });
+                        newGrid2[i].push({ letter: wordz[i + j], state: "tileGray" });
                     } else {
-                        newGrid2[i].push({ letter: randomLetrs(1), state: "tileStart" });
+                        newGrid2[i].push({ letter: randomLetrs(1), state: "tileGray" });
                     }
                 }
             }
@@ -186,7 +186,7 @@ function AppLetter() {
                 currentWord[i].state = "tileIncorrect";
                 solutionCountMap[currentWord[i].letter] = solutionCountMap[currentWord[i].letter] - 1;
             } else {
-                currentWord[i].state = "tileStart";
+                currentWord[i].state = "tileGray";
             }
         }
     };

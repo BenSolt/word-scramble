@@ -84,6 +84,17 @@ h5 {
     border-radius: 4px;
     margin: 2px;
 }
+/* ///////////////// */
+.tileRed {
+    width: 70px;
+    height: 70px;
+    box-Sizing: border-box;
+    background-Color: red;
+    border: 2px solid black;
+    border-radius: 4px;
+    margin: 2px;
+}
+/* //////////////////// */
 
 .letter {
     display: flex;

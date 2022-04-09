@@ -42,6 +42,8 @@ const arr = [
 
 const SIZE = 6;
 
+const arrCompare = [0,1,2,3,4,5];
+
 function randomLetrs(length) {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -60,7 +62,7 @@ function shuffle(array) {
         array[j] = temp;
     }
 }
-shuffle(arr);
+//shuffle(arr);
 
 function getPos(index) {
     return {
@@ -88,30 +90,56 @@ function App() {
     const [cards, setCards] = useState(arr);
     const [moves, setMoves] = useState(0);
 
+    const [puzzle, setPuzzle] = useState([]);
+
     function handleCardClick(targetIndex) {
         if (canSwap(targetIndex, blankIndex)) {
-            startTimer();
+            // startTimer();
             setMoves(moves + 1)
             setCards((cards) => swap(cards, targetIndex, blankIndex));
             setBlankIndex(targetIndex);
         }
     };
 
+    function range(start,end) {
+        const arr = [];
+        for (let i = start; i <= end; i++) {
+            arr.push(i)
+        }
+        return arr
+    }
+    //console.log(range(0,5));
+
     const solutionCountMap = getLetterCountMap(wordPick);
     function checkWin() {
+
+        const currentWord = cards[1];
         let currentWordArr = []
+        //
+        for (let i = 6; i < cards.length; i++) {
+            cards[i].state = 'tileStart'
+        }
+        
         for (let i = 0; i < wordPick.length; i++) {
+          
             const solChar = wordPick[i];
+            const solCountVal = solutionCountMap[cards[i].letter];
             if (cards[i].letter === solChar) {
+                solutionCountMap[solChar] = solutionCountMap[solChar] - 1; 
+                cards[i].state = 'tileGreen'
                 currentWordArr.push(cards[i].letter)
 
                 let aa = currentWordArr.join()
                 let currentWordString = aa.replaceAll(',', '');
-                //let wordzNoZero = wordPick.replaceAll('0', '');
-
                 if (currentWordString === wordPick) {
                     gameOverWon();
                 }
+            }
+            else if (solCountVal && solCountVal > 0) {
+                cards[i].state = 'tileYellow'
+                //solutionCountMap[cards[i].letter] = solutionCountMap[cards[i].letter] - 1;
+            } else {
+                cards[i].state = 'tileStart'
             }
         }
     }
@@ -186,32 +214,14 @@ function App() {
             <div>
                 <div className="board2">
                     {cards.map((num, i) => {
-                        const solCountVal = solutionCountMap[cards[i].letter];
                         if (num.id === 0) {
                             return <div className="tileBlank" key={num.id} />;
-                        }
-                        for (let i = 0; i < wordPick.length; i++) {
-
-                            const solChar = wordPick[i];
-
-                            if (cards[i].letter === solChar) {
-                                solutionCountMap[solChar] = solutionCountMap[solChar] - 1;
-                                cards[i].state = 'tileGreen'
-                            } else if (cards[i].id < 6) {
-                                cards[i].state = 'tileYellow'
-                            }
-                            else if (solCountVal && solCountVal > 0) {
-                                cards[i].state = 'tileYellow'
-                                solutionCountMap[cards[i].letter] = solutionCountMap[cards[i].letter] - 1;
-                            } else {
-                                cards[i].state = 'tileStart'
-                            }
                         }
                         checkWin();
 
                         return (
                             <div className={num.state} key={num.id} onClick={() => handleCardClick(i)}>
-                                {/* <h4 className="Letter">{num.id}</h4> */}
+                                {/* <h1 className="letter">{num.id}</h1> */}
                                 <h1 className="letter">{num.letter}</h1>
                             </div>
                         );
