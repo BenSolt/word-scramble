@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 // PAUL HELPED WITH THIS ONE
-import AppPaul from './AppPaul';
+// import AppPaul from './AppPaul';
 
 import AppWordScramble from './AppWordScramble';
 // import AppWordScramble2 from './AppWordScramble2';
@@ -13,7 +13,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
 
-    <AppPaul/>
+    {/* <AppPaul/> */}
 
     <AppWordScramble/>
     {/* <AppWordScramble2/> */}
