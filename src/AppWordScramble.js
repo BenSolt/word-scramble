@@ -90,32 +90,20 @@ function App() {
     const [cards, setCards] = useState(arr);
     const [moves, setMoves] = useState(0);
 
-    const [puzzle, setPuzzle] = useState([]);
-
     function handleCardClick(targetIndex) {
         if (canSwap(targetIndex, blankIndex)) {
-            // startTimer();
+            startTimer();
             setMoves(moves + 1)
             setCards((cards) => swap(cards, targetIndex, blankIndex));
             setBlankIndex(targetIndex);
         }
     };
 
-    function range(start,end) {
-        const arr = [];
-        for (let i = start; i <= end; i++) {
-            arr.push(i)
-        }
-        return arr
-    }
-    //console.log(range(0,5));
-
     const solutionCountMap = getLetterCountMap(wordPick);
     function checkWin() {
 
-        const currentWord = cards[1];
         let currentWordArr = []
-        //
+
         for (let i = 6; i < cards.length; i++) {
             cards[i].state = 'tileStart'
         }
